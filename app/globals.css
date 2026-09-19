@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+  --red: #F60D1A;
+  --dark: #B00010;
+  --soft: #E23D44;
+  --ruby: #9E3038;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #222;
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+::selection {
+  background: #F60D1A;
+  color: white;
+}
+
+
+/* =========================
+   TEXT EFFECTS
+========================= */
+
+.diamond-text {
+  background: radial-gradient(
+    circle at 55% 45%,
+    #EA7275 0 16%,
+    #F60D1A 34%,
+    #D30715 58%,
+    #B00010 84%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.red-linear {
+  background: linear-gradient(
+    90deg,
+    #E00222,
+    #E5021E 50%,
+    #C40111 75%,
+    #B00010
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-bg {
+  background: linear-gradient(
+    122deg,
+    #f2f1f1 50%,
+    #fff 59%,
+    #ebebe9 75%,
+    #f2f1f1 81%
+  );
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.glow-card {
+  box-shadow:
+    inset 0 0 24.2px rgba(226, 61, 68, 0.25),
+    0 4px 8px 2px rgba(226, 61, 68, 0.18);
+}
+
+.reserve-card {
+  box-shadow:
+    0 0 15.4px 7px rgba(226, 61, 68, 0.25);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+  background: #9E3038;
+  color: #fff;
+
+  box-shadow:
+    inset 1px 1px 9.7px 7px rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary,
+.btn-outline {
+  height: 50px;
+  min-width: 192px;
+
+  border-radius: 10px;
+  padding: 0 22px;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: #fff;
+
+  border: 1.5px solid #9E3038;
+
+  color: #B00010;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-active {
+  position: relative;
+}
+
+.nav-active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -8px;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #B00010,
+    #F60D1A,
+    #EA7275,
+    #D30715
+  );
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section-pad {
+  padding:
+    96px
+    max(
+      24px,
+      calc((100vw - 1240px) / 2)
+    );
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 80;
+
+  display: grid;
+  place-items: center;
+
+  padding: 20px;
+
+  animation: fade 0.2s ease;
+}
+
+.modal {
+  animation: pop 0.22s ease;
+
+  max-height: 92vh;
+
+  overflow: auto;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+.placeholder {
+  background: linear-gradient(
+    145deg,
+    #fff,
+    #f8eeee
+  );
+
+  border:
+    1px dashed
+    rgba(176, 0, 16, 0.35);
+
+  display: grid;
+  place-items: center;
+
+  color: #9E3038;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+  .section-pad {
+    padding: 72px 22px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    min-width: 0;
+    width: 100%;
+  }
+}
