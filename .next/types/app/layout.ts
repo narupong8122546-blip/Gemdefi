@@ -1,4 +1,4 @@
-// File: C:\Users\MildTeen\Desktop\gemdefi-website\app\layout.js
+// File: C:\Users\User\Desktop\gemdefi-website\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
